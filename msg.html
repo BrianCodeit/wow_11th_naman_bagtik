@@ -63,6 +63,19 @@
         transform: translateY(0);
     }
 }
+    
+    .floating {
+        position: fixed;
+        font-size: 1.3rem;
+        pointer-events: none;
+        animation: floatUp 4.5s ease-in forwards;
+        opacity: 0.7;
+      }
+
+      @keyframes floatUp {
+        0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+        100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
 
   </style>
 </head>
@@ -72,5 +85,24 @@
     <h1>💕Happy Monthsary💕</h1>
     <p>HAPPPY 11TH MONTSAAARRRYYYY WAHAHAHHAAHA GALENG DALIA RA KAAYUS ADLAAAWW UUYYY😭😭😭😭 WATDAHELLY IS DIIISSSS SO VERY FASTING THE WATERING OMAYGAD WANAKOY MASULTI WAHAHAHAHHAHA AY KUAN NALNG DIAY STORY ABOUT MY COLLEGE. SO FIRST DAY KAYYY AYUN NGA NANIBAGO PAS ENVIRONMENT KAY ABIG NAAY SARILI NGA ROOM NYA WADIAY TAS AYUN DUGAY KAAYU NAKAKITAG KAKAN-AN MAO TONG NIADTU NALNG OG SM WAHHAHAHHAHA GALENG E NOH BISAG NAA DIAY DAGHAY KAKAN-ANAN GAWAS EVSUU😭😭😭😭 AYUN NAKAPLITI PAG 20 BACK AND FORTH WHAHAHAHAHAHAH ANDEN 2ND DAY KY MEDJ NAGLISOD GIHAPON OG PANGITAG KAKAN-AN KAY PURO PUNO ANG KATAMBAYAN MAO TONG DUGAY KAYMI NAKAKAON WAHAHAHHA ANDEN PAG 3RD DAY KAY AYUN MEDJ OKAY NA ANG LAHAT, AY DI PA DIAY AY BASTA MAO NANA SYA WAHAHAHAHAAH YUN LUNGS. OKAY NEXT QUESTION SO AYUN NGA HAPPPYYY 11TH MONTSHARY WOOHOHOHOOHOO SO FRIKING FASTING MEEENNNN LIKE WATDAHEL SAUNA IS MAUWAW2 PATA OG TAGAD2 TAPOS KARUN WANA NAG HOLDING HANDS NA TAPOS HUG ANDEN UBAN2 DAYYYMMM TAPOS NAGPLANO PA SI ATE GLYGLY NGA MO KIISS WOWOWOWOWOWOOW AY AWA ANI NIG SUNOD GURO NATOG KITA KY MOKISS NI SYA LARGO😜😜😜😜😜 AHHWHHHAHAHHAHAHA LOOKING FORWARD TO IITT, TOTOOOYYYY WAHAHAHHAAHHAHAH IWAN KO NA BA WANAKO KAHIBAW UNSAY ISULTI BASTA KAY YUN NA YUN ANG IMPORTANTE BUHIIII WHAHAAHHHAHAA HAPPPYYY 11TH MONTSHAARRYYYY OWEMJIII 😖😖😖😖 ILOVEYOUUSOOMUCHH ATE GLYGLYYY 😻😻😻😻 MWAMWAAAAAAHHHH 😙😙😙😙 💋💋💋💋 MENEMEESSYYYUUUU 🥹🥹🥹🥹</p>
     <p class="last"> PATOTOYA NAKOO</p>
+
+    <script>
+    const emojis = ['🌸', '💖', '🌹', '✨', '💕', '🌺', '🌷'];
+    
+    function createFloating() {
+      const el = document.createElement('div');
+      el.className = 'floating';
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.bottom = '-40px';
+      el.style.animationDuration = (3.5 + Math.random() * 2.5) + 's';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 7000);
+    }
+
+    setInterval(createFloating, 450);
+    for (let i = 0; i < 6; i++) setTimeout(createFloating, i * 250);
+  </script>
+    
 </body>
 </html>
